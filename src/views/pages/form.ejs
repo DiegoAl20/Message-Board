@@ -1,0 +1,22 @@
+<%- include("../partials/head", {title: title}) %>
+
+    <div class="container-header">
+        <a href="/">Back to Messages</a>
+    </div>
+
+    <div class="container-form">
+        <h2>What's on your mind?</h2>
+        <form method="post" action="/new">
+            <div>
+                <input name="username" type="text" placeholder="Username" required>
+            </div>
+            <div>
+                <textarea name="messageText" rows="6" placeholder="Message" required></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Send Message">
+            </div>
+        </form>
+    </div>
+
+    <%- include("../partials/footer") %>

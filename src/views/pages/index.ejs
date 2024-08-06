@@ -1,0 +1,27 @@
+<%- include("../partials/head", {title: title}) %>
+    <div class="container-header">
+        <h1>
+            <%= h1 %>
+        </h1>
+        <a href="/new">New Message</a>
+    </div>
+    <div class="container-messages">
+        <ul>
+            <% for (let i = messages.length - 1; i >= 0; i--) { %>
+                <li>
+                    <p class="username">
+                        <%= messages[i].user %>
+                    </p>
+                    <p class="date">
+                        <% const format = (date, locale, options) => new Intl.DateTimeFormat(locale, options).format(date) %>
+                        <%= format(messages[i].added, 'en', {dateStyle: 'long'});%>
+                    </p>
+                    <p class="message">
+                        <%= messages[i].text %>
+                    </p>
+                </li>
+                <%}%>
+        </ul>
+    </div>
+
+    <%- include("../partials/footer") %>
